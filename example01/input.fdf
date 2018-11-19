@@ -1,141 +1,30 @@
-SystemName                   Water molecule
-SystemLabel                  h2o
+         # -- SELF-CONSISTENT FIELD --
 
-MeshCutoff                    300 Ry             # Default: 300 Ry
-
-PAO.EnergyShift               30 meV             # The energy increase experienced by the orbital when confined.
-                                                 # Single parameter used to set the basis sizes for all species.
-
-
-XC.Functional                GGA                 # Options: LDA | GGA | VDW
-                                                 #   Default: LDA
-XC.Authors                   PBE                 # Options:
-                                                 #   for LDA: CA, PZ | PW92
-                                                 #   for GGA: PW91 | PBE | revPBE | RPBE | BLYP | PBEsol | WC | AM05
-                                                 #            PBEJsJrLO | PBEJsJrHEG | PBEGcGxLO | PBEGcGxHEG
-                                                 #   for VDW: DRSLL (DF1) | LMKLL (DF2) | KBM | C09 | BH | VV
-
-#Spin                          non-polarized       # non-polarized | polarized | non-collinear | spin-orbit
-
-#%block DM.InitSpin
-#   1  +
-#   2  -
-#%endblock DM.InitSpin
+MeshCutoff                   300 Ry
+PAO.EnergyShift              30 meV
+XC.Functional                GGA
+XC.Authors                   PBE
+MaxSCFIterations             1000
 
 
-MaxSCFIterations             1000                 # Maximun number of SCF iterations
-DM.MixingWeight               0.40                # Default: 0.25
-DM.NumberPulay                7                   # Default: 0
-#DM.NumberKick                 50
-#WriteDM                      false
-#DM.UseSaveDM                  false
-#SCF.DM.Tolerance             1.d-4               # Default: 1.d-4
-#SCF.H.Tolerance              1.d-3 eV            # Default: 1.d-3 eV
+         # -- MOLECULAR DYNAMICS --
 
-OccupationFunction           FD                  # Options: FD, MP
-ElectronicTemperature        600 K               # Default: 300 K
-
-#%block KgridMonkhorstPack
-#   1   0   0   0.0
-#   0   1   0   0.0
-#   0   0   1   0.0
-#%endblock KgridMonkhorstPack
-
-Diag.ParallelOverK           true                # Default: false
-#WriteKpoints                  false              # Default: false
-
-# -- MOLECULAR DYNAMICS --
-
-MD.TypeOfRun                 Broyden             # Options: CG | Broyden | FIRE
-                                                 #          Verlet | Nose | ParrinelloRahman | NoseParrinelloRahman | Anneal
-                                                 #          FC | Phonon | Force
-                                                 #          Default: Verlet
-#MD.VariableCell              true                # Default: false
-#MD.FIRE.TimeStep             0.5 fs
-MD.NumCGsteps                500                 # Default: 0
-MD.MaxForceTol               0.020 eV/Ang        # Default: 0.040 eV/Ang
-#MD.MaxStressTol             0.01 GPa            # Default: 1.0 GPa
-#MD.FCDispl                    0.04 Bohr          # Default: 0.04 Bohr
-#MD.FCfirst                    1                  # Default: 1
-#MD.FClast                     2
+MD.TypeOfRun                 Broyden
+MD.NumCGsteps                1000
+MD.MaxForceTol               0.020 eV/Ang
 
 
-# -- ELECTRONIC STRUCTURE --
-
-#BandLinesScale               ReciprocalLatticeVectors          # Options: pi/a | ReciprocalLatticeVectors
-
-#%block BandLines
-#   1  0.00000000 0.00000000 0.00000000 Gamma
-#  50  0.00000000 0.50000000 0.50000000 X
-#  50  0.25000000 0.75000000 0.50000000 W
-#  50  0.50000000 0.50000000 0.50000000 L
-#  50  0.00000000 0.00000000 0.00000000 Gamma
-#  50  0.37500000 0.75000000 0.37500000 K
-#%endblock BandLines
-
-#%block BandPoints    # List of k-points
-#  0.000  0.000  0.000
-#  0.500  0.000  0.000
-#  0.000  0.500  0.000
-#  0.000  0.000  0.500
-#%endblock BandPoints
-
-#%block PDOS.kgrid_Monkhorst_Pack
-# 100   0   0   0.0
-#   0 100   0   0.0
-#   0   0 100   0.0
-#%endblock PDOS.kgrid_Monkhorst_Pack
-
-#%block ProjectedDensityOfStates
-#  -8.0    2.0   0.10    500    eV
-#%endblock ProjectedDensityOfStates
-
-#%block LocalDensityOfStates
-#   -4.97   -3.97   eV
-#%endblock LocalDensityOfStates
-
-#COOP.Write                   true                # Default: false
-#WFS.EnergyMin                -7.0 eV
-#WFS.EnergyMax                -4.0 eV
-#WFS.Write.For.Bands          true
-#WFS.band.min                 1
-#WFS.band.max                 13
-#WriteBands                   false
-#WriteKBands                  false
-#WriteEigenvalues             false
-#SaveRho                      false               # Default: false
-#SaveElectrostaticPotential   false               # Default: false
-
-#WriteHirshfeldPop            true                # Default: false
-#WriteVoronoiPop              true                # Default: false
-
-#OpticalCalculation          true
-#Optical.EnergyMinimum        0.0 eV
-#Optical.EnergyMaximum        4.0 eV
-#Optical.Broaden             0.05 eV
-#Optical.Scissor             0.0 eV
-#Optical.NumberOfBands       1000
-
-#%block Optical.Mesh
-# 200 200 1
-#%endblock Optical.Mesh
-
-#Optical.PolarizationType    unpolarized
-#%block Optical.Vector
-#  0.0  0.0  1.0
-#%endblock Optical.Vector
-
-
-# -- MATERIAL --
-
-%block ChemicalSpeciesLabel                      # Format: 
- 1   8  O.gga                                    #   species_index    atomic_number    pseudopotential_file(*.psf)
- 2   1  H.gga                                    #   For adsortion energies, use BSSE with ghost atoms (negative atomic number).
-%endblock ChemicalSpeciesLabel
-
+         # -- MATERIAL --
+SystemLabel                  H2O
 WriteCoorStep                true
 WriteCoorXmol                true
-AtomicCoordinatesFormat      Ang                 # Options: Bohr | Ang | ScaledCartesian | ScaledByLatticeVectors
+
+%block ChemicalSpeciesLabel
+ 1   8  O.gga
+ 2   1  H.gga
+%endblock ChemicalSpeciesLabel
+
+AtomicCoordinatesFormat      Ang
 
 LatticeConstant              1.000 Ang
 
@@ -146,11 +35,7 @@ LatticeConstant              1.000 Ang
 %endblock LatticeVectors
 
 %block AtomicCoordinatesAndAtomicSpecies
-   0.000000000    0.00000000    0.00000000   1
-   1.000000000    0.00000000    0.00000000   2
-   0.000000000    1.00000000    0.00000000   2
+  10.000000000   10.00000000   10.00000000   1
+  11.000000000   10.00000000   10.00000000   2
+  10.000000000   11.00000000   10.00000000   2
 %endblock AtomicCoordinatesAndAtomicSpecies
-
-
-
-
