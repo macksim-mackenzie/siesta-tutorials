@@ -9,7 +9,7 @@ MaxSCFIterations             1000
 
          # -- MOLECULAR DYNAMICS --
 
-MD.TypeOfRun                 Broyden
+MD.TypeOfRun                 CG
 MD.NumCGsteps                1000
 MD.MaxForceTol               0.01 eV/Ang
 

@@ -19,6 +19,7 @@ MD.MaxForceTol               0.01 eV/Ang
 SystemLabel                  H2O
 WriteCoorStep                true
 WriteCoorXmol                true
+WriteMDXmol                  true
 
 %block ChemicalSpeciesLabel
  1   8  O.gga
