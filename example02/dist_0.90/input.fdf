@@ -31,5 +31,5 @@ LatticeConstant              1.000 Ang
 
 %block AtomicCoordinatesAndAtomicSpecies
     0.00000000    0.00000000    0.00000000   1
-    0.00000000    0.00000000    VAR_DISTANCE 1
+    0.00000000    0.00000000    0.90 1
 %endblock AtomicCoordinatesAndAtomicSpecies
