@@ -1,3 +1,5 @@
+# Siesta input file
+
          # -- SELF-CONSISTENT FIELD --
 
 MeshCutoff                   300 Ry
