@@ -7,12 +7,12 @@ PAO.EnergyShift              30 meV
 XC.Functional                GGA
 XC.Authors                   PBE
 MaxSCFIterations             1000
+NetCharge                    1.0
 
 
          # -- MOLECULAR DYNAMICS --
 
-MD.TypeOfRun                 FIRE
-MD.FIRE.TimeStep             2.0 fs
+MD.TypeOfRun                 Broyden
 MD.NumCGsteps                1000
 MD.MaxForceTol               0.01 eV/Ang
 
