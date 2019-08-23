@@ -1,0 +1,41 @@
+# Siesta input file
+
+         # -- SELF-CONSISTENT FIELD --
+
+MeshCutoff                   300 Ry
+PAO.EnergyShift              30 meV
+XC.Functional                GGA
+XC.Authors                   PBE
+MaxSCFIterations             1000
+
+
+         # -- MOLECULAR DYNAMICS --
+
+MD.TypeOfRun                 Broyden
+MD.NumCGsteps                0
+MD.MaxForceTol               0.01 eV/Ang
+
+
+         # -- MATERIAL --
+
+SystemLabel                  LiCoronene 
+WriteCoorStep                true
+WriteCoorXmol                true
+
+%block ChemicalSpeciesLabel
+ 1   3  Li.gga
+%endblock ChemicalSpeciesLabel
+
+AtomicCoordinatesFormat      Ang
+
+LatticeConstant              1.000 Ang
+
+%block LatticeVectors
+       20.0000000000         0.0000000000         0.0000000000
+        0.0000000000        20.0000000000         0.0000000000
+        0.0000000000         0.0000000000        20.0000000000
+%endblock LatticeVectors
+
+%block AtomicCoordinatesAndAtomicSpecies
+    9.53675545    9.78957093   11.81997317   1
+%endblock AtomicCoordinatesAndAtomicSpecies
