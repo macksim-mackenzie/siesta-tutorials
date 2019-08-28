@@ -2,7 +2,7 @@
 
          # -- SELF-CONSISTENT FIELD --
 
-MeshCutoff                   300 Ry
+MeshCutoff                   400 Ry
 PAO.EnergyShift              30 meV
 XC.Functional                GGA
 XC.Authors                   PBE
