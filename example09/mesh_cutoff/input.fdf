@@ -2,7 +2,7 @@
 
          # -- SELF-CONSISTENT FIELD --
 
-MeshCutoff                   400 Ry
+MeshCutoff                   VAR_MESH Ry
 PAO.EnergyShift              30 meV
 XC.Functional                GGA
 XC.Authors                   PBE
@@ -12,7 +12,7 @@ MaxSCFIterations             1000
          # -- MOLECULAR DYNAMICS --
 
 MD.TypeOfRun                 Broyden
-MD.NumCGsteps                1000
+MD.NumCGsteps                0
 MD.MaxForceTol               0.01 eV/Ang
 
 

@@ -1,1 +1,6 @@
 .DS_Store
+*.RHO
+*.DRHO
+*.VT
+*.VH
+*.BADER
