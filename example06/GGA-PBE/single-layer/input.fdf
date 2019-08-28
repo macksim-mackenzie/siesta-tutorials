@@ -1,0 +1,53 @@
+# Siesta input file
+
+         # -- SELF-CONSISTENT FIELD --
+
+MeshCutoff                   300 Ry
+PAO.EnergyShift              30 meV
+XC.Functional                GGA
+XC.Authors                   PBE
+MaxSCFIterations             1000
+
+
+         # -- MOLECULAR DYNAMICS --
+
+MD.TypeOfRun                 Broyden
+MD.NumCGsteps                1000
+MD.MaxForceTol               0.01 eV/Ang
+
+
+         # -- MATERIAL --
+
+SystemLabel                  BenzeneStacking 
+WriteCoorStep                true
+WriteCoorXmol                true
+
+%block ChemicalSpeciesLabel
+ 1   6   C.gga
+ 2   1   H.gga
+%endblock ChemicalSpeciesLabel
+
+AtomicCoordinatesFormat      Ang
+
+LatticeConstant              1.000 Ang
+
+%block LatticeVectors
+       20.0000000000         0.0000000000         0.0000000000
+        0.0000000000        20.0000000000         0.0000000000
+        0.0000000000         0.0000000000        20.0000000000
+%endblock LatticeVectors
+
+%block AtomicCoordinatesAndAtomicSpecies
+    4.69292946    3.62739815    4.23874971   1       1  C.gga
+    3.28324182    3.70269566    4.22788655   1       2  C.gga
+    2.59019864    3.78325469    3.00067563   1       3  C.gga
+    3.30669300    3.78823421    1.78428902   1       4  C.gga
+    4.71632603    3.71280579    1.79514835   1       5  C.gga
+    5.40937581    3.63237028    3.02238017   1       6  C.gga
+    5.23703596    3.56349057    5.20169011   2       7  H.gga
+    2.72078927    3.69814787    5.18240574   2       8  H.gga
+    1.48385190    3.84177081    2.99222811   2       9  H.gga
+    2.76269500    3.84989222    0.82112660   2      10  H.gga
+    5.27851050    3.71479167    0.84047598   2      11  H.gga
+    6.51557471    3.57168931    3.03089564   2      12  H.gga
+%endblock AtomicCoordinatesAndAtomicSpecies

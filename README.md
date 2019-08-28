@@ -5,6 +5,6 @@
  3. H2O geometry optimization
  4. Phenol (and Potetital Ionization)
  5. Lithium and coronene
- 6. Coronene stacking 
- 7. Glycine charge density
+ 6. Benzene-Benzene stacking 
+ 7. Glycine (Amino acid) charge density
  8. Graphene 

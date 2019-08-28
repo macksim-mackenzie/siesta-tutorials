@@ -1,0 +1,65 @@
+# Siesta input file
+
+         # -- SELF-CONSISTENT FIELD --
+
+MeshCutoff                   300 Ry
+PAO.EnergyShift              30 meV
+XC.Functional                VDW
+XC.Authors                   VV
+MaxSCFIterations             1000
+
+
+         # -- MOLECULAR DYNAMICS --
+
+MD.TypeOfRun                 Broyden
+MD.NumCGsteps                1000
+MD.MaxForceTol               0.01 eV/Ang
+
+
+         # -- MATERIAL --
+
+SystemLabel                  BenzeneStacking 
+WriteCoorStep                true
+WriteCoorXmol                true
+
+%block ChemicalSpeciesLabel
+ 1   6   C.gga
+ 2   1   H.gga
+%endblock ChemicalSpeciesLabel
+
+AtomicCoordinatesFormat      Ang
+
+LatticeConstant              1.000 Ang
+
+%block LatticeVectors
+       20.0000000000         0.0000000000         0.0000000000
+        0.0000000000        20.0000000000         0.0000000000
+        0.0000000000         0.0000000000        20.0000000000
+%endblock LatticeVectors
+
+%block AtomicCoordinatesAndAtomicSpecies
+    3.71572546    0.33142249    5.46078033   1       1  C.gga
+    2.30051285    0.41711428    5.45058841   1       2  C.gga
+    1.60478441    0.48808275    4.21754413   1       3  C.gga
+    2.32424971    0.47826088    2.99601575   1       4  C.gga
+    3.73918537    0.39613977    3.00577785   1       5  C.gga
+    4.43404548    0.32210581    4.23852035   1       6  C.gga
+    4.70093314    3.69033240    4.23316416   1       7  C.gga
+    3.28622569    3.77259709    4.22427782   1       8  C.gga
+    2.59023299    3.84678312    2.99199388   1       9  C.gga
+    3.30807017    3.83774031    1.76943475   1      10  C.gga
+    4.72315453    3.75218425    1.77869687   1      11  C.gga
+    5.41983075    3.68090252    3.01130319   1      12  C.gga
+    4.26026563    0.27842176    6.42438426   2      13  H.gga
+    1.73888176    0.42936873    6.40587255   2      14  H.gga
+    0.49874304    0.55633543    4.20927467   2      15  H.gga
+    1.78066206    0.54614817    2.03268907   2      16  H.gga
+    4.30220173    0.41011445    2.05162894   2      17  H.gga
+    5.54096420    0.26935467    4.24727058   2      18  H.gga
+    5.24511003    3.62240478    5.19624681   2      19  H.gga
+    2.72403766    3.75857900    5.17894729   2      20  H.gga
+    1.48333078    3.89983304    2.98404704   2      21  H.gga
+    2.76320520    3.89124945    0.80601088   2      22  H.gga
+    5.28452307    3.74030268    0.82313518   2      23  H.gga
+    6.52583292    3.61278297    3.01890595   2      24  H.gga
+%endblock AtomicCoordinatesAndAtomicSpecies
