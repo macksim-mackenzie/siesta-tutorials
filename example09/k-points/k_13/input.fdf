@@ -2,7 +2,7 @@
 
          # -- SELF-CONSISTENT FIELD --
 
-MeshCutoff                   VAR_MESH Ry
+MeshCutoff                   350 Ry
 PAO.EnergyShift              30 meV
 XC.Functional                GGA
 XC.Authors                   PBE
@@ -20,9 +20,9 @@ MD.MaxForceTol               0.01 eV/Ang
          # -- BRILLOUIN ZONE -- 
 
 %block KgridMonkhorstPack
-  17   0   0   0.0
-   0  17   0   0.0
-   0   0  17   0.0
+  13   0   0   0.0
+   0  13   0   0.0
+   0   0  13   0.0
 %endblock KgridMonkhorstPack
 
 Diag.ParallelOverK           true                # Default: false

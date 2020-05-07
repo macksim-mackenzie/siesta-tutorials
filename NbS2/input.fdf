@@ -1,0 +1,149 @@
+SystemName                   NbS2
+SystemLabel                  NbS2
+
+%block ChemicalSpeciesLabel                  
+ 1  41 Nb
+ 2  16  S
+%endblock ChemicalSpeciesLabel
+
+LatticeConstant              1.000 Ang
+
+%block LatticeVectors
+        2.926023   -1.689340    0.000000
+        2.926023    1.689340    0.000000
+        0.000000    0.000000   20.000000
+%endblock LatticeVectors
+
+AtomicCoordinatesFormat      ScaledByLatticeVectors     
+
+%block AtomicCoordinatesAndAtomicSpecies
+    0.00002090    0.00002089    0.50000041   1       1  Nb.gga
+    0.33335592    0.33335591    0.42073194   2       2  S.gga
+    0.33335549    0.33335550    0.57926912   2       3  S.gga
+%endblock AtomicCoordinatesAndAtomicSpecies
+
+WriteCoorStep                true
+WriteCoorXmol                true
+
+# -----------------------------------------------
+#                 BASIS FUNCTIONS
+# -----------------------------------------------
+
+MeshCutoff                    400 Ry
+
+PAO.BasisSize                 DZP   
+PAO.EnergyShift               30 meV
+
+
+# -----------------------------------------------
+#           BRILLOUIN ZONE SAMPLING
+# -----------------------------------------------
+
+%block KgridMonkhorstPack
+  11   0   0   0.0
+   0  11   0   0.0
+   0   0   1   0.0
+%endblock KgridMonkhorstPack
+
+
+# -----------------------------------------------
+#        EXCHANGE-CORRELATION FUNCTIONAL
+# -----------------------------------------------
+
+XC.Functional                GGA 
+XC.Authors                   PBE 
+
+# -----------------------------------------------
+#               SPIN POLARIZATION
+# -----------------------------------------------
+
+#SpinPolarized                 true                # Default: false
+#NonCollinearSpin             false               # Default: false
+#FixSpin                      true                # Default: false
+#TotalSpin                    1.0                 # Default: false
+#SingleExcitation             false               # Default: false
+
+# -----------------------------------------------
+#            SELF-CONSISTENT FIELD
+# -----------------------------------------------
+
+MinSCFIterations             1                    # Minimun number of SCF iterations
+MaxSCFIterations             300                  # Maximun number of SCF iterations
+DM.MixingWeight               0.25                # Default: 0.25
+DM.NumberPulay                7                   # Default: 0
+DM.NumberKick                 30
+#DM.UseSaveDM                 false
+ElectronicTemperature        300 K               # Default: 300 K
+
+
+# ------------------------------------------
+#        MOLECULAR DYNAMICS
+# ------------------------------------------
+
+MD.TypeOfRun                 Broyden
+#MD.VariableCell              true                # Default: false
+MD.NumCGsteps                300                 # Default: 0
+MD.MaxForceTol               0.001 eV/Ang        # Default: 0.040 eV/Ang
+MD.MaxStressTol              0.05 GPa
+
+# -----------------------------------------------
+#               PARALLEL Options
+# -----------------------------------------------
+
+Diag.ParallelOverK           true                # Default: false
+
+# -----------------------------------------------
+#              ELECTRONIC STRUCTURE
+# -----------------------------------------------
+
+BandLinesScale               ReciprocalLatticeVectors        
+
+%block BandLines
+   1  0.00000000 0.00000000 0.00000000 Gamma
+  50  0.66666666 0.33333333 0.00000000 K
+  50  0.50000000 0.00000000 0.00000000 M 
+  50  0.00000000 0.00000000 0.00000000 Gamma
+%endblock BandLines
+
+#WaveFuncKPointsScale         ReciprocalLatticeVectors      
+
+#%block WaveFuncKPoints
+#   0.66666666 0.33333333 0.00000000 from 16 to 17
+#%endblock WaveFuncKPoints
+
+#%block PDOS.kgrid_Monkhorst_Pack
+# 300   0   0   0.0
+#   0 300   0   0.0
+#   0   0   1   0.0
+#%endblock PDOS.kgrid_Monkhorst_Pack
+
+#%block ProjectedDensityOfStates
+#  -10.0    0.0  0.05    300    eV
+#%endblock ProjectedDensityOfStates
+
+#%block LocalDensityOfStates
+#   -4.97   -3.97   eV
+#%endblock LocalDensityOfStates
+
+#COOP.Write                   true                # Default: false
+#WFS.EnergyMin                -7.0 eV
+#WFS.EnergyMax                -4.0 eV
+#WFS.Write.For.Bands          true
+#WFS.band.min                 1
+#WFS.band.max                 13
+#WriteWaveFunctions           false
+#WriteDenchar                 false
+#SaveRho                      false               # Default: false
+#SaveElectrostaticPotential   false               # Default: false
+#SaveTotalPotential           false               # Default: false
+#SaveHS                       false               # Default: false
+
+# -----------------------------------------------
+#               PARTIAL CHARGES 
+# -----------------------------------------------
+
+#MullikenInSCF                false               # Default: false
+#WriteMullikenPop             0                   # Default: 0     Options: 0, 1, 2, 3
+#WriteHirshfeldPop           true                # Default: false
+#WriteVoronoiPop              true                # Default: false
+
