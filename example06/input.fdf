@@ -1,0 +1,62 @@
+# Siesta input file
+
+         # -- SELF-CONSISTENT FIELD --
+
+MeshCutoff                   300 Ry
+PAO.EnergyShift              30 meV
+XC.Functional                GGA
+XC.Authors                   PBE
+MaxSCFIterations             1000
+
+
+         # -- MOLECULAR DYNAMICS --
+
+MD.TypeOfRun                 Broyden
+MD.NumCGsteps                1000
+MD.MaxForceTol               0.01 eV/Ang
+
+
+         # -- VOLUMETRIC DATA --
+
+SaveRho                      true
+SaveDeltaRho                 true
+SaveElectrostaticPotential   true
+SaveTotalPotential           true
+SaveBaderCharge              true
+
+
+         # -- MATERIAL --
+
+SystemLabel                  GlycineAminoAcid 
+WriteCoorStep                true
+WriteCoorXmol                true
+
+%block ChemicalSpeciesLabel
+ 1   6   C.gga
+ 2   1   H.gga
+ 3   8   O.gga
+ 4   7   N.gga
+%endblock ChemicalSpeciesLabel
+
+AtomicCoordinatesFormat      Ang
+
+LatticeConstant              1.000 Ang
+
+%block LatticeVectors
+       20.0000000000         0.0000000000         0.0000000000
+        0.0000000000        20.0000000000         0.0000000000
+        0.0000000000         0.0000000000        20.0000000000
+%endblock LatticeVectors
+
+%block AtomicCoordinatesAndAtomicSpecies
+    3.76794861    6.97162719    4.97643264   1       1  C.gga
+    5.23103858    6.57128483    5.16221938   1       2  C.gga
+    6.38325946    5.10559499    5.39951606   2       3  H.gga
+    1.85887728    6.22194546    4.97309616   2       4  H.gga
+    2.97452689    5.17381027    4.35525974   2       5  H.gga
+    3.56537720    7.72800902    5.77338822   2       6  H.gga
+    3.75399943    7.54544252    4.00860304   2       7  H.gga
+    6.16206202    7.36925333    5.14571825   3       8  O.gga
+    5.40811076    5.22124921    5.31762520   3       9  O.gga
+    2.81702489    5.87050743    5.09574068   4      10  N.gga
+%endblock AtomicCoordinatesAndAtomicSpecies
