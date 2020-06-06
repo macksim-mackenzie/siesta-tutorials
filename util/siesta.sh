@@ -22,7 +22,7 @@ function siesta_gettemperature() {
 }
 
 function siesta_clean() {
- rm -f H_DMGEN *.bib DM* *.ion* MMpot.* INPUT_TMP.* fdf* Rho.grid.nc FORCE_STRESS CLOCK OCCS BASIS_* NON_TRIMMED_* H_MIXED PARALLEL_DIST pkg.dat pkf.dat MESSAGES CLOCK *.BONDS *.BONDS_FINAL *.TOCH
+ rm -f H_DMGEN *.bib DM* *.ion* MMpot.* INPUT_TMP.* fdf* Rho.grid.nc FORCE_STRESS CLOCK OCCS BASIS_* NON_TRIMMED_* H_MIXED PARALLEL_DIST pkg.dat pkf.dat MESSAGES *.BONDS *.BONDS_FINAL *.TOCH *.ORB_INDX *.STRUCT_OUT
 }
 
 function run_siesta_serial() {
