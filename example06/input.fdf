@@ -2,7 +2,7 @@
 
          # -- SELF-CONSISTENT FIELD --
 
-MeshCutoff                   300 Ry
+MeshCutoff                   400 Ry
 PAO.EnergyShift              30 meV
 XC.Functional                GGA
 XC.Authors                   PBE
@@ -12,14 +12,13 @@ MaxSCFIterations             1000
          # -- MOLECULAR DYNAMICS --
 
 MD.TypeOfRun                 Broyden
-MD.NumCGsteps                1000
-MD.MaxForceTol               0.01 eV/Ang
+MD.NumCGsteps                500
+MD.MaxForceTol               0.02 eV/Ang
 
 
          # -- VOLUMETRIC DATA --
 
 SaveRho                      true
-SaveDeltaRho                 true
 SaveElectrostaticPotential   true
 SaveTotalPotential           true
 SaveBaderCharge              true
@@ -49,14 +48,14 @@ LatticeConstant              1.000 Ang
 %endblock LatticeVectors
 
 %block AtomicCoordinatesAndAtomicSpecies
-    3.76794861    6.97162719    4.97643264   1       1  C.gga
-    5.23103858    6.57128483    5.16221938   1       2  C.gga
-    6.38325946    5.10559499    5.39951606   2       3  H.gga
-    1.85887728    6.22194546    4.97309616   2       4  H.gga
-    2.97452689    5.17381027    4.35525974   2       5  H.gga
-    3.56537720    7.72800902    5.77338822   2       6  H.gga
-    3.75399943    7.54544252    4.00860304   2       7  H.gga
-    6.16206202    7.36925333    5.14571825   3       8  O.gga
-    5.40811076    5.22124921    5.31762520   3       9  O.gga
-    2.81702489    5.87050743    5.09574068   4      10  N.gga
+    3.76810718    6.97208206    4.97703156   1       1  C.gga
+    5.23103870    6.57087184    5.16200605   1       2  C.gga
+    6.38273992    5.10513692    5.39932696   2       3  H.gga
+    1.85897803    6.22292703    4.97518821   2       4  H.gga
+    2.97277613    5.17837426    4.34784657   2       5  H.gga
+    3.56539590    7.72571769    5.77654518   2       6  H.gga
+    3.75420573    7.54882286    4.01092011   2       7  H.gga
+    6.16232657    7.36848449    5.14541248   3       8  O.gga
+    5.40758480    5.22083565    5.31745939   3       9  O.gga
+    2.81738177    5.87051704    5.09299811   4      10  N.gga
 %endblock AtomicCoordinatesAndAtomicSpecies
