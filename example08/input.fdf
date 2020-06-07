@@ -1,0 +1,75 @@
+# Siesta input file
+
+         # -- SELF-CONSISTENT FIELD --
+
+MeshCutoff                   400 Ry
+PAO.EnergyShift              30 meV
+XC.Functional                GGA
+XC.Authors                   PBE
+MaxSCFIterations             1000
+
+
+         # -- MOLECULAR DYNAMICS --
+
+MD.TypeOfRun                 Broyden
+MD.NumCGsteps                1000
+MD.MaxForceTol               0.01 eV/Ang
+
+
+         # -- BRILLOUIN ZONE -- 
+
+%block KgridMonkhorstPack
+  25   0   0   0.0
+   0  25   0   0.0
+   0   0   1   0.0
+%endblock KgridMonkhorstPack
+
+Diag.ParallelOverK           true                # Default: false
+
+
+         # -- ELECTRONIC PROPERTIES --
+
+BandLinesScale                ReciprocalLatticeVectors
+
+%block BandLines
+  1  0.00000000  0.00000000  0.00000000  Gamma
+ 50  0.66666666  0.33333333  0.00000000  K 
+ 50  0.50000000  0.00000000  0.00000000  M
+ 50  0.00000000  0.00000000  0.00000000  Gamma
+%endblock BandLines
+
+%block PDOS.kgridMonkhorstPack
+ 300   0   0   0.0
+   0 300   0   0.0
+   0   0   1   0.0
+%endblock PDOS.kgridMonkhorstPack
+
+%block ProjectedDensityOfStates
+  -10.0   0.0   0.04    300    eV
+%endblock ProjectedDensityOfStates
+
+
+         # -- MATERIAL --
+
+SystemLabel                  Graphene
+WriteCoorStep                true
+WriteCoorXmol                true
+
+%block ChemicalSpeciesLabel
+ 1   6   C.gga
+%endblock ChemicalSpeciesLabel
+
+LatticeConstant              1.000 Ang
+
+%block LatticeVectors
+        2.15598929    -1.24476100    0.00000000
+        2.15598929     1.24476100    0.00000000
+        0.00000000     0.00000000   20.00000000
+%endblock LatticeVectors
+
+AtomicCoordinatesFormat      ScaledByLatticeVectors
+
+%block AtomicCoordinatesAndAtomicSpecies
+    0.33333333    0.33333333    0.50000000 1
+    0.66666666    0.66666666    0.50000000 1
+%endblock AtomicCoordinatesAndAtomicSpecies
