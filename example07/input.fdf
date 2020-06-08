@@ -14,8 +14,6 @@ MaxSCFIterations             1000
 MD.TypeOfRun                 Broyden
 MD.NumCGsteps                100
 MD.MaxForceTol               0.01 eV/Ang
-#MD.VariableCell              true
-#MD.MaxStressTol              0.01 GPa
 
          # -- BRILLOUIN ZONE -- 
 
