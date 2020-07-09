@@ -1,0 +1,54 @@
+# Siesta input file
+
+         # -- SELF-CONSISTENT FIELD --
+
+MeshCutoff                   300 Ry
+PAO.EnergyShift              30 meV
+XC.Functional                GGA
+XC.Authors                   PBE
+MaxSCFIterations             1000
+
+
+         # -- MOLECULAR DYNAMICS --
+
+MD.TypeOfRun                 Broyden
+MD.NumCGsteps                100
+MD.MaxForceTol               0.01 eV/Ang
+#MD.VariableCell              true
+#MD.MaxStressTol              0.01 GPa
+
+         # -- BRILLOUIN ZONE -- 
+
+%block KgridMonkhorstPack
+  19   0   0   0.0
+   0  19   0   0.0
+   0   0   1   0.0
+%endblock KgridMonkhorstPack
+
+Diag.ParallelOverK           true                # Default: false
+
+
+         # -- MATERIAL --
+
+SystemLabel                  Graphene
+WriteCoorStep                true
+WriteCoorXmol                true
+
+%block ChemicalSpeciesLabel
+ 1  6  C
+%endblock ChemicalSpeciesLabel
+
+LatticeConstant              1.000 Ang
+
+%block LatticeVectors
+        2.15384935  1.2435255   0.000000
+        2.15384935 -1.2435255   0.000000
+        0.000000    0.000000   20.000000
+%endblock LatticeVectors
+
+AtomicCoordinatesFormat      ScaledByLatticeVectors
+
+%block AtomicCoordinatesAndAtomicSpecies
+    0.00000000    0.00000000    0.50000000  1
+    0.33333333    0.33333333    0.50000000  1
+%endblock AtomicCoordinatesAndAtomicSpecies
