@@ -23,7 +23,7 @@ SERIAL version
 * OpenMP version 201511
 * OpenMP runtime schedule DYNAMIC, chunks 1
 ** OpenMP runtime schedule DYNAMIC, chunks 32
->> Start of run:   9-JUL-2020  19:58:57
+>> Start of run:  10-JUL-2020  15:54:01
 
 initatom: Reading input for the pseudopotentials and atomic orbitals ----------
 Species number:   1 Atomic number:    6 Label: C
@@ -295,6 +295,10 @@ siesta: k-grid: Supercell and displacements
 siesta: k-grid:   19   0   0      0.000
 siesta: k-grid:    0  19   0      0.000
 siesta: k-grid:    0   0   1      0.000
+Using current reciprocal lattice vectors for BandLinesScale
+Beware any cell changes by the end of the run
+Using current reciprocal lattice vectors for BandLinesScale
+Beware any cell changes by the end of the run
 
 superc: Internal auxiliary supercell:     9 x     9 x     1  =      81
 superc: Number of atoms, orbitals, and projectors:    162   2106   2592
@@ -369,7 +373,7 @@ siesta: FreeEng =      -324.453130
 
         iscf     Eharris(eV)        E_KS(eV)     FreeEng(eV)     dDmax    Ef(eV) dHmax(eV)
    scf:    1     -320.158785     -324.453130     -324.453130  1.769690 -7.326865  4.979418
-timer: Routine,Calls,Time,% = IterSCF        1       1.236  48.50
+timer: Routine,Calls,Time,% = IterSCF        1       1.967  55.75
    scf:    2     -324.675466     -324.567323     -324.567323  0.064539 -6.386017  3.259496
    scf:    3     -324.728622     -324.661212     -324.661212  0.114957 -4.657597  0.100900
    scf:    4     -324.661123     -324.661175     -324.661175  0.002342 -4.706004  0.026918
@@ -400,7 +404,7 @@ siesta: Atomic forces (eV/Ang):
 ----------------------------------------
    Max    0.001221    constrained
 
-Stress-tensor-Voigt (kbar):        0.03        0.02       -0.01        0.00        0.00        0.00
+Stress-tensor-Voigt (kbar):        0.03        0.02       -0.01       -0.00       -0.00        0.00
 (Free)E + p*V (eV/cell)     -324.6621
 Target enthalpy (eV/cell)     -324.6612
 
@@ -415,6 +419,8 @@ outcoor: Relaxed atomic coordinates (fractional):
     0.33333333    0.33333333    0.50000000   1       2  C
 
 coxmol: Writing XMOL coordinates into file Graphene.xyz                                                        
+Computing bands...
+*** Note: ParallelOverK option not used for Bands
 
 siesta: Program's energy decomposition (eV):
 siesta: Ebs     =      -110.548743
@@ -453,8 +459,8 @@ siesta:         Fermi =      -4.752721
 
 siesta: Stress tensor (static) (eV/Ang**3):
 siesta:     0.000019   -0.000000    0.000000
-siesta:     0.000000    0.000013    0.000000
-siesta:     0.000000    0.000000   -0.000008
+siesta:    -0.000000    0.000013    0.000000
+siesta:     0.000000   -0.000000   -0.000008
 
 siesta: Cell volume =        107.134664 Ang**3
 
@@ -469,61 +475,61 @@ siesta:          -0.01278956         -0.02153199  kBar
 siesta: Electric dipole (a.u.)  =   -0.000000   -0.000000    0.000000
 siesta: Electric dipole (Debye) =   -0.000000   -0.000000    0.000000
 
-timer: Elapsed wall time (sec) =       9.075
+timer: Elapsed wall time (sec) =      13.079
 timer: CPU execution times (sec):
 
 Routine            Calls   Time/call    Tot.time        %
-siesta                 1       9.075       9.075   100.00
-Setup                  1       0.116       0.116     1.28
-bands                  1       0.000       0.000     0.00
+siesta                 1      13.078      13.078   100.00
+Setup                  1       0.149       0.149     1.14
+bands                  3       0.061       0.182     1.39
 KSV_init               1       0.000       0.000     0.00
-IterGeom               1       8.951       8.951    98.63
-state_init             1       0.104       0.104     1.14
-hsparse                1       0.004       0.004     0.04
-overlap                1       0.096       0.096     1.06
-Setup_H0               1       1.092       1.092    12.03
-naefs                  2       0.000       0.000     0.00
+IterGeom               1      12.727      12.727    97.31
+state_init             1       0.138       0.138     1.05
+hsparse                1       0.004       0.004     0.03
+overlap                1       0.128       0.128     0.98
+Setup_H0               1       1.274       1.274     9.74
+naefs                  2       0.000       0.001     0.01
 MolMec                 2       0.000       0.000     0.00
-kinefsm                2       0.053       0.106     1.17
-nlefsm                 2       0.225       0.450     4.96
-DHSCF_Init             1       0.658       0.658     7.25
-DHSCF1                 1       0.041       0.041     0.45
+kinefsm                2       0.060       0.121     0.92
+nlefsm                 2       0.245       0.490     3.75
+DHSCF_Init             1       0.814       0.814     6.23
+DHSCF1                 1       0.066       0.066     0.51
 INITMESH               1       0.000       0.000     0.00
-DHSCF2                 1       0.617       0.617     6.80
-REMESH                 1       0.079       0.079     0.87
-REORD                 37       0.000       0.008     0.08
-PHION                  1       0.480       0.480     5.29
-COMM_BSC              25       0.000       0.005     0.06
-POISON                12       0.005       0.060     0.66
-fft                   24       0.002       0.045     0.49
-IterSCF                9       0.704       6.332    69.77
-setup_H               10       0.360       3.596    39.63
-DHSCF                 11       0.443       4.877    53.74
-DHSCF3                11       0.360       3.964    43.68
-rhoofd                11       0.184       2.024    22.31
-CellXC                11       0.053       0.584     6.44
-cellXC                11       0.053       0.584     6.44
-vmat                  11       0.115       1.269    13.99
-compute_dm             9       0.302       2.715    29.91
-diagon                 9       0.301       2.707    29.82
-c-eigval            1629       0.000       0.752     8.28
-c-buildHS           1629       0.000       0.616     6.79
-cdiag               3258       0.000       0.437     4.81
-cdiag1              3258       0.000       0.039     0.43
-cdiag2              3258       0.000       0.070     0.77
-cdiag3              3258       0.000       0.304     3.35
-cdiag4              3258       0.000       0.006     0.07
-c-eigvec            1629       0.001       0.912    10.05
-c-buildD            1629       0.001       1.018    11.22
-MIXER                  8       0.001       0.004     0.05
-PostSCF                1       1.415       1.415    15.60
-DHSCF4                 1       0.913       0.913    10.06
-dfscf                  1       0.859       0.859     9.47
-overfsm                1       0.006       0.006     0.07
-state_analysis         1       0.003       0.003     0.03
+DHSCF2                 1       0.748       0.748     5.72
+REMESH                 1       0.142       0.142     1.08
+REORD                 37       0.000       0.009     0.07
+PHION                  1       0.537       0.537     4.11
+COMM_BSC              25       0.000       0.006     0.05
+POISON                12       0.008       0.094     0.72
+fft                   24       0.003       0.067     0.52
+IterSCF                9       1.051       9.461    72.34
+setup_H               10       0.585       5.850    44.73
+DHSCF                 11       0.684       7.528    57.56
+DHSCF3                11       0.573       6.307    48.22
+rhoofd                11       0.279       3.074    23.50
+CellXC                11       0.102       1.118     8.55
+cellXC                11       0.102       1.118     8.55
+vmat                  11       0.180       1.979    15.13
+compute_dm             9       0.399       3.588    27.44
+diagon                 9       0.397       3.572    27.31
+c-eigval            1930       0.001       1.153     8.82
+c-buildHS           1930       0.000       0.956     7.31
+cdiag               3559       0.000       0.565     4.32
+cdiag1              3559       0.000       0.054     0.42
+cdiag2              3559       0.000       0.091     0.69
+cdiag3              3559       0.000       0.388     2.97
+cdiag4              3559       0.000       0.008     0.06
+c-eigvec            1629       0.001       1.201     9.19
+c-buildD            1629       0.001       1.366    10.45
+MIXER                  8       0.001       0.005     0.04
+PostSCF                1       1.846       1.846    14.12
+DHSCF4                 1       1.221       1.221     9.33
+dfscf                  1       1.159       1.159     8.86
+overfsm                1       0.009       0.009     0.07
+state_analysis         1       0.003       0.003     0.02
 siesta_move            1       0.000       0.000     0.00
-Analysis               1       0.004       0.004     0.04
+Analysis               1       0.196       0.196     1.50
 optical                1       0.000       0.000     0.00
   
->> End of run:   9-JUL-2020  19:59:06
+>> End of run:  10-JUL-2020  15:54:14
 Job completed
