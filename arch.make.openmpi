@@ -8,7 +8,7 @@
 .SUFFIXES:
 .SUFFIXES: .f .F .o .a .f90 .F90
 
-SIESTA_ARCH=linux-mpi
+SIESTA_ARCH=ubuntu-openmpi
 
 FPP=
 FPP_OUTPUT= 

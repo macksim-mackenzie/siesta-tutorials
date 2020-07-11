@@ -38,6 +38,7 @@ def calculate_siesta(i):
 
 # variable cell
 def variable_cell(x):
+    '''Create linear interpolation between initial unit cell and final unit cell'''
     cell_init = initial.get_cell()
     cell_final = final.get_cell()
     return x*cell_final + (1-x)*cell_init
@@ -53,6 +54,7 @@ for i in range(num_images):
 
 images.append(final)
 
+# Create NEB object
 neb = NEB(images, climb=True)
 neb.interpolate()
 

@@ -1,30 +1,34 @@
 #  SIESTA shell functions
 #
-#    Leandro Seixas
+#    Leandro Seixas <leandro.seixas@mackenzie.br>
 #    MackGraphe - Graphene and Nanomaterials Research Center
 #    Mackenzie Presbyterian University
 #
 
-function siesta_getlastforce() {
+function siestafunction_force() {
   grep constrained job.out | awk '{print $2}' | tail -n 1
 }
 
-function siesta_getforces() {
+function siestafunction_forces() {
   grep constrained job.out | awk '{print $2}'
 }
 
-function siesta_getenergy() {
+function siestafunction_clean() {
+ rm -f H_DMGEN *.bib DM* *.ion* MMpot.* INPUT_TMP.* fdf* Rho.grid.nc FORCE_STRESS CLOCK OCCS BASIS_* NON_TRIMMED_* H_MIXED PARALLEL_DIST MESSAGES 0_NORMAL_EXIT
+}
+
+function siestafunction_energy() {
   grep "Total =" job.out | cut -d = -f 2
 }
 
-function siesta_gettemperature() {
+function siestafunction_temp() {
   grep "Temp_ion" job.out | cut -d = -f 2
 }
 
-function siesta_clean() {
- rm -f H_DMGEN *.bib DM* *.ion* MMpot.* INPUT_TMP.* fdf* Rho.grid.nc FORCE_STRESS CLOCK OCCS BASIS_* NON_TRIMMED_* H_MIXED PARALLEL_DIST pkg.dat pkf.dat MESSAGES *.BONDS *.BONDS_FINAL *.TOCH *.ORB_INDX *.STRUCT_OUT
+function siestafunction_atoms(){
+  grep "initatomlists\: Number of atoms" job.out | awk '{print $8}'
 }
 
-function run_siesta_serial() {
-   OMP_NUM_THREADS=1 siesta < input.fdf > job.out &
+function siestafunction_spin(){
+  grep "spin moment" job.out | tail -1 | awk '{print $10}'
 }
