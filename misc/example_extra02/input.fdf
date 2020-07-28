@@ -1,4 +1,4 @@
-SystemName                   NbS2
+# SystemName                   NbS2
 SystemLabel                  NbS2
 
 %block ChemicalSpeciesLabel                  

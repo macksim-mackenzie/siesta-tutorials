@@ -56,7 +56,7 @@ WriteCoorStep                true
 WriteCoorXmol                true
 
 %block ChemicalSpeciesLabel
- 1   6   C.gga
+ 1   6   C
 %endblock ChemicalSpeciesLabel
 
 LatticeConstant              1.000 Ang

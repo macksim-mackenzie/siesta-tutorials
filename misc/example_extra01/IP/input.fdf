@@ -24,9 +24,9 @@ WriteCoorStep                true
 WriteCoorXmol                true
 
 %block ChemicalSpeciesLabel
- 1   6  C.gga
- 2   1  H.gga
- 3   8  O.gga
+ 1   6  C
+ 2   1  H
+ 3   8  O
 %endblock ChemicalSpeciesLabel
 
 AtomicCoordinatesFormat      Ang

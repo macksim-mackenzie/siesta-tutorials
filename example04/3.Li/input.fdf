@@ -23,7 +23,7 @@ WriteCoorStep                true
 WriteCoorXmol                true
 
 %block ChemicalSpeciesLabel
- 1   3  Li.gga
+ 1   3  Li
 %endblock ChemicalSpeciesLabel
 
 AtomicCoordinatesFormat      Ang
