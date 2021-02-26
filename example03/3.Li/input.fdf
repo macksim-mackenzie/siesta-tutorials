@@ -18,7 +18,7 @@ MD.MaxForceTol               0.01 eV/Ang
 
          # -- MATERIAL --
 
-SystemLabel                  LiCoronene 
+SystemLabel                  Li_atom
 WriteCoorStep                true
 WriteCoorXmol                true
 

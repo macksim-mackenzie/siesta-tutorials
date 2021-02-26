@@ -1,0 +1,67 @@
+# Siesta input file
+
+         # -- SELF-CONSISTENT FIELD --
+
+MeshCutoff                   300 Ry
+PAO.EnergyShift              30 meV
+XC.Functional                GGA
+XC.Authors                   PBE
+MaxSCFIterations             1000
+
+
+         # -- MOLECULAR DYNAMICS --
+
+MD.TypeOfRun                 Broyden
+MD.NumCGsteps                1000
+MD.MaxForceTol               0.01 eV/Ang
+
+
+         # -- MATERIAL --
+
+SystemLabel                  LiPAH
+WriteCoorStep                true
+WriteCoorXmol                true
+
+%block ChemicalSpeciesLabel
+ 1   3  Li
+ 2   6   C
+ 3   1   H
+%endblock ChemicalSpeciesLabel
+
+AtomicCoordinatesFormat      Ang
+
+LatticeConstant              1.000 Ang
+
+%block LatticeVectors
+       20.0000000000         0.0000000000         0.0000000000
+        0.0000000000        20.0000000000         0.0000000000
+        0.0000000000         0.0000000000        20.0000000000
+%endblock LatticeVectors
+
+%block AtomicCoordinatesAndAtomicSpecies
+    9.51539513    9.80271505   11.80708648   1       1  Li
+   10.81229815   10.51325361   10.02537394   2       2  C
+   10.77886560    9.07501108   10.09739254   2       3  C
+    9.54127051   11.24403769    9.99566523   2       4  C
+   12.03152075   11.26557171   10.03354053   2       5  C
+    9.55232776    8.32283841   10.02663097   2       6  C
+    8.31310079   10.49342400   10.03791013   2       7  C
+    9.57653906   12.67597157    9.97855332   2       8  C
+   12.02435066   12.67139297   10.01802973   2       9  C
+    8.28146556    9.05435032    9.99617630   2      10  C
+   10.79427895   13.37815609    9.99115783   2      11  C
+    9.51503009    6.89066104   10.03665879   2      12  C
+    7.06137073    8.30389896    9.97872203   2      13  C
+    8.29607263    6.19013798   10.02115575   2      14  C
+    7.06673981    6.89818727    9.99245481   2      15  C
+   12.98251535   13.22694492   10.02488864   3      16  H
+   10.79111327   14.48561640    9.97798829   3      17  H
+    8.29768430    5.08259284   10.02934850   3      18  H
+    6.10771346    6.34426142    9.97877943   3      19  H
+    6.10070799    8.85640618    9.94915474   3      20  H
+    7.35286056   11.04620975   10.01035761   3      21  H
+    8.61589493   13.22846943    9.95019482   3      22  H
+   12.99360684   10.71511019   10.04776938   3      23  H
+   11.73954262    8.52255387   10.11697065   3      24  H
+   10.47480397    6.33603460   10.05225658   3      25  H
+%endblock AtomicCoordinatesAndAtomicSpecies
