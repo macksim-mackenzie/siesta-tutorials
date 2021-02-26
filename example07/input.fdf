@@ -14,6 +14,8 @@ MaxSCFIterations             1000
 MD.TypeOfRun                 Broyden
 MD.NumCGsteps                100
 MD.MaxForceTol               0.01 eV/Ang
+MD.VariableCell              true
+MD.MaxStressTol              0.01 GPa
 
          # -- BRILLOUIN ZONE -- 
 
@@ -28,20 +30,20 @@ Diag.ParallelOverK           true                # Default: false
 
          # -- MATERIAL --
 
-SystemLabel                  Gold
+SystemLabel                  Silver
 WriteCoorStep                true
 WriteCoorXmol                true
 
 %block ChemicalSpeciesLabel
- 1  79  Au
+ 1  47  Ag
 %endblock ChemicalSpeciesLabel
 
 LatticeConstant              1.000 Ang
 
 %block LatticeVectors
-        0.000000    2.239196    2.239196
-        2.239196    0.000000    2.239196
-        2.239196    2.239196    0.000000
+        0.000000    2.042650    2.042650
+        2.042650    0.000000    2.042650
+        2.042650    2.042650    0.000000
 %endblock LatticeVectors
 
 AtomicCoordinatesFormat      ScaledByLatticeVectors
