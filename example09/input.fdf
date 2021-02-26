@@ -38,16 +38,6 @@ BandLinesScale                ReciprocalLatticeVectors
  50  0.00000000  0.00000000  0.00000000  Gamma
 %endblock BandLines
 
-%block PDOS.kgridMonkhorstPack
- 300   0   0   0.0
-   0 300   0   0.0
-   0   0   1   0.0
-%endblock PDOS.kgridMonkhorstPack
-
-%block ProjectedDensityOfStates
-  -10.0   0.0   0.04    300    eV
-%endblock ProjectedDensityOfStates
-
 
          # -- MATERIAL --
 
