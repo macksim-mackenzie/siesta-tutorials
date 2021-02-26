@@ -9,14 +9,22 @@ XC.Authors                   PBE
 MaxSCFIterations             1000
 
 
+         # -- MOLECULAR DYNAMICS --
+
+MD.TypeOfRun                 Broyden
+MD.NumCGsteps                1000
+MD.MaxForceTol               0.01 eV/Ang
+
+
          # -- MATERIAL --
 
-SystemLabel                  H2
+SystemLabel                  H2O
 WriteCoorStep                true
 WriteCoorXmol                true
 
 %block ChemicalSpeciesLabel
- 1   1  H
+ 1   8  O
+ 2   1  H
 %endblock ChemicalSpeciesLabel
 
 AtomicCoordinatesFormat      Ang
@@ -30,6 +38,7 @@ LatticeConstant              1.000 Ang
 %endblock LatticeVectors
 
 %block AtomicCoordinatesAndAtomicSpecies
-    0.00000000    0.00000000    0.00000000   1
-    0.00000000    0.00000000    VAR_DISTANCE 1
+  10.000000000   10.00000000   10.00000000   1
+  11.000000000   10.00000000   10.00000000   2
+  10.000000000   11.00000000   10.00000000   2
 %endblock AtomicCoordinatesAndAtomicSpecies
