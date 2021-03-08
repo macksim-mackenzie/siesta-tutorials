@@ -5,7 +5,7 @@
 MeshCutoff                   300 Ry
 PAO.EnergyShift              30 meV
 XC.Functional                GGA
-XC.Authors                   PBE
+XC.Authors                   PBEsol
 MaxSCFIterations             1000
 
 
