@@ -5,7 +5,7 @@
 MeshCutoff                   300 Ry
 PAO.EnergyShift              30 meV
 XC.Functional                GGA
-XC.Authors                   PBE
+XC.Authors                   PBEsol
 MaxSCFIterations             1000
 
 
@@ -14,13 +14,15 @@ MaxSCFIterations             1000
 MD.TypeOfRun                 Broyden
 MD.NumCGsteps                100
 MD.MaxForceTol               0.01 eV/Ang
+MD.VariableCell              true
+MD.MaxStressTol              0.01 GPa
 
          # -- BRILLOUIN ZONE -- 
 
 %block KgridMonkhorstPack
-  17   0   0   0.0
-   0  17   0   0.0
-   0   0  17   0.0
+  15   0   0   0.0
+   0  15   0   0.0
+   0   0  15   0.0
 %endblock KgridMonkhorstPack
 
 Diag.ParallelOverK           true                # Default: false
@@ -44,7 +46,7 @@ LatticeConstant              1.000 Ang
         2.239196    2.239196    0.000000
 %endblock LatticeVectors
 
-AtomicCoordinatesFormat      ScaledByLatticeVectors
+AtomicCoordinatesFormat      Ang
 
 %block AtomicCoordinatesAndAtomicSpecies
     0.00000000    0.00000000    0.00000000 1

@@ -20,9 +20,9 @@ MD.MaxStressTol              0.01 GPa
          # -- BRILLOUIN ZONE -- 
 
 %block KgridMonkhorstPack
-  17   0   0   0.0
-   0  17   0   0.0
-   0   0  17   0.0
+  15   0   0   0.0
+   0  15   0   0.0
+   0   0  15   0.0
 %endblock KgridMonkhorstPack
 
 Diag.ParallelOverK           true                # Default: false
@@ -46,7 +46,7 @@ LatticeConstant              1.000 Ang
         2.042650    2.042650    0.000000
 %endblock LatticeVectors
 
-AtomicCoordinatesFormat      ScaledByLatticeVectors
+AtomicCoordinatesFormat      Ang
 
 %block AtomicCoordinatesAndAtomicSpecies
     0.00000000    0.00000000    0.00000000 1
